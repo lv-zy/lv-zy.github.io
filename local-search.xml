@@ -4,11 +4,24 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2022/06/01/##%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/"/>
+    <url>/2022/06/01/##%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/</url>
+    
+    <content type="html"><![CDATA[<h2 id="为什么要建个人博客">为什么要建个人博客？</h2><p>一开始接触的时候纯属是觉得有趣，本着折腾的精神浅试了一下。其实也并没有想好会在这里写些什么。在经历一番折腾后成功地搭建起来后，成功地弃坑了。最近又突然有了一个想法，打算做一个自己的植物鉴别小图鉴</p><p>初次接触blog是使用hexo搭建，用的是GitHubpages代理。后来因为有一个linux轻量服务器，又想把网站</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World!!!</title>
     <link href="/2022/06/01/Hello-World/"/>
     <url>/2022/06/01/Hello-World/</url>
     
-    <content type="html"><![CDATA[<!-- ![](Hello-World/index.jpg) --><p>折腾了许久，终于能够按照国际惯例说一声： <strong>HelloWorld!!!</strong> <span id="more"></span></p><p>创世纪文章用来留白祭天/doge</p>]]></content>
+    <content type="html"><![CDATA[<!-- ![](Hello-World/index.jpg) --><p>国际惯例： <strong>Hello World!!!</strong> <span id="more"></span></p><p><strong>猫猫镇楼</strong></p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/1.jpg"></div><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/5.jpg"></div><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/6.jpg"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/2.jpg"></div><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/3.jpg"></div><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/4.jpg"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/7.jpg"></div><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/8.jpg"></div><div class="group-image-wrap"><img src="/2022/06/01/Hello-World/9.jpg"></div></div></div>]]></content>
     
     
     
