@@ -23,10 +23,12 @@
 <meta property="og:site_name" content="红泥小火炉">
 <meta property="og:description" content="一些博客搭建时踩的坑---经验指南">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.lvzy21.com/img/index/blog_create.png">
 <meta property="article:published_time" content="2022-06-25T14:29:38.000Z">
-<meta property="article:modified_time" content="2022-06-25T16:12:42.095Z">
+<meta property="article:modified_time" content="2022-06-25T16:23:18.304Z">
 <meta property="article:author" content="lvzy">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.lvzy21.com/img/index/blog_create.png">
   
   
   
@@ -235,80 +237,73 @@
             <div class="markdown-body">
               
               <p><strong>折腾 折腾 还是折腾</strong></p>
-<p>从开始学习搭建博客，到现在基本能够投入使用，中间还是经历了不少的曲折的道路，投入了相当的精力。简单回忆一下，我的博客搭建之路为：
-1. 使用hexo + GitHub pages 搭建 2. 使用自己的云服务器+nginx+hexo搭建 3.
-使用hexo + GitHub pages + netlify （目前使用）</p>
-<h1 id="尝试过程">尝试过程</h1>
-<h2 id="hexo-github-pages">hexo + github pages</h2>
-<p>hexo的使用十分简单，对于博客新手来说十分友好，我就选择了hexo来进行上手了。hexo的原理就是在本地配置好相应的环境，然后在本地直接生成渲染对应的网站文件。然后需要借助GitHub
-pages来部署生成的网站文件，让其他人能够在互联网上访问到你的博客。</p>
-<p>按照教程一步步来，搭建hexo环境就已经完成了一半了。然后剩下的就是和GitHub
-pages的联动。首先还是需要建立对应的GitHub仓库，然后建立本地计算机和GitHub仓库的ssh，配置好后以后就可以在本地写好网站，然后直接更新GitHub仓库内容，自动部署。再然后就是继续配置一些GitHub
-pages上的小细节，基本就完成了。严格按照教程来走一趟，不出啥意外的话一个小时就能够配好了。</p>
-<p>的确一开始也很顺利，在本地试运行了之后，然后成功通过GitHub
-pages给的url去访问了！</p>
-<h3 id="问题出在哪">问题出在哪？</h3>
-<p>有两座大山摆在面前。一个是域名问题，一个是GitHub的某些众所周知的速度慢的问题。</p>
-<h3 id="速度慢">速度慢</h3>
-<p>这是后来折腾来折腾去的一大问题。GitHub因为国内某些原因，时不时会抽风，根本无法正常访问。即使能够访问，速度也非常不稳定，最慢的时候加载一张图片超过了一分钟！显然一个正经的博客不能容忍这样的问题出现。</p>
-<h3 id="域名">域名</h3>
-<p>其实如果没有第一个问题，域名也不算是什么问题。觉得GitHub给的自带的域名太长了不好记，于是自己买了一个域名，方便访问。如果没有第一个问题，只需要简单地将买来的域名指向GitHub给的链接就可以很顺利地完成域名解析的任务，就可以通过自定的域名来访问。</p>
+<p>从开始学习搭建博客，到现在基本能够投入使用，中间还是经历了不少的曲折的道路，投入了相当的精力。简单回忆一下，我的博客搭建之路为：</p>
+<ol>
+<li>使用hexo + GitHub pages 搭建</li>
+<li>使用自己的云服务器+nginx+hexo搭建</li>
+<li>使用hexo + GitHub pages + netlify （目前使用）</li>
+</ol>
+<h1 id="尝试过程"><a href="#尝试过程" class="headerlink" title="尝试过程"></a>尝试过程</h1><h2 id="hexo-github-pages"><a href="#hexo-github-pages" class="headerlink" title="hexo + github pages"></a>hexo + github pages</h2><p>hexo的使用十分简单，对于博客新手来说十分友好，我就选择了hexo来进行上手了。hexo的原理就是在本地配置好相应的环境，然后在本地直接生成渲染对应的网站文件。然后需要借助GitHub pages来部署生成的网站文件，让其他人能够在互联网上访问到你的博客。</p>
+<p>按照教程一步步来，搭建hexo环境就已经完成了一半了。然后剩下的就是和GitHub pages的联动。首先还是需要建立对应的GitHub仓库，然后建立本地计算机和GitHub仓库的ssh，配置好后以后就可以在本地写好网站，然后直接更新GitHub仓库内容，自动部署。再然后就是继续配置一些GitHub pages上的小细节，基本就完成了。严格按照教程来走一趟，不出啥意外的话一个小时就能够配好了。</p>
+<p>的确一开始也很顺利，在本地试运行了之后，然后成功通过GitHub pages给的url去访问了！</p>
+<h3 id="问题出在哪？"><a href="#问题出在哪？" class="headerlink" title="问题出在哪？"></a>问题出在哪？</h3><p>有两座大山摆在面前。一个是域名问题，一个是GitHub的某些众所周知的速度慢的问题。</p>
+<h3 id="速度慢"><a href="#速度慢" class="headerlink" title="速度慢"></a>速度慢</h3><p>这是后来折腾来折腾去的一大问题。GitHub因为国内某些原因，时不时会抽风，根本无法正常访问。即使能够访问，速度也非常不稳定，最慢的时候加载一张图片超过了一分钟！显然一个正经的博客不能容忍这样的问题出现。</p>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><p>其实如果没有第一个问题，域名也不算是什么问题。觉得GitHub给的自带的域名太长了不好记，于是自己买了一个域名，方便访问。如果没有第一个问题，只需要简单地将买来的域名指向GitHub给的链接就可以很顺利地完成域名解析的任务，就可以通过自定的域名来访问。</p>
 <p>但是加载速度慢啊。</p>
 <p>那怎么办？不能每次进来都等个几分钟，然后就为了看那几张图片吧？</p>
-<h2 id="hexo-nginx">hexo + nginx</h2>
-<p>(补充更新：还折腾了一下cdn（content delivery network)，尝试为GitHub
-pages加速，后来因为问题越来越多不得不暂时放弃了。)</p>
-<p>既然GitHub
-pages提供的服务比较慢，那我就不用它了吧。我用自己的服务器。有服务器还愁没法搭建网站？</p>
+<h2 id="hexo-nginx"><a href="#hexo-nginx" class="headerlink" title="hexo + nginx"></a>hexo + nginx</h2><p>(补充更新：还折腾了一下cdn（content delivery network)，尝试为GitHub pages加速，后来因为问题越来越多不得不暂时放弃了。)</p>
+<p>既然GitHub pages提供的服务比较慢，那我就不用它了吧。我用自己的服务器。有服务器还愁没法搭建网站？</p>
 <p>还真是愁。</p>
 <p>又是一番找教程自学摸索，折腾了老半天，终于在linux服务器上搭建了nginx，然后再配置好hexo环境。</p>
-<p>在本地写好，push到服务器，启动服务。紧张兮兮地先打开公网ip
-试试，成了！能进去了！而且访问速度比pages快了不知多少倍。</p>
+<p>在本地写好，push到服务器，启动服务。紧张兮兮地先打开公网ip 试试，成了！能进去了！而且访问速度比pages快了不知多少倍。</p>
 <p>半天过去，以为终于差不多能够结束了，就差将自己的域名指向服务器IP了。我兴冲冲地点开域名管理，修改指向，然后静静地等待生效。</p>
 <p>等了半小时，刷新网站，发现有变化了！</p>
 <p>但是这变化不太妙。</p>
 <p>乐，在国内服务器搭建的网站都需要备案。你用IP可以访问，但是一旦绑定了域名，就必须要在公安系统备案才能够运行。</p>
-<p>谁会用IP去访问一个网站啊...</p>
+<p>谁会用IP去访问一个网站啊…</p>
 <p>行，那我去备案。</p>
-<h3 id="备案">备案</h3>
-<p>去到腾讯云的备案接口，稍微看了一眼要求，就看到以下这么一点： &gt;
-备案的域名必须是在国内注册的。</p>
+<h3 id="备案"><a href="#备案" class="headerlink" title="备案"></a>备案</h3><p>去到腾讯云的备案接口，稍微看了一眼要求，就看到以下这么一点：</p>
+<blockquote>
+<p>备案的域名必须是在国内注册的。</p>
+</blockquote>
 <p>然而我的域名是在namesilo里面购买的，属于国外注册，无法使用这个域名来进行备案，除非将它转到国内。</p>
 <p>一想到要将域名转到国内已经头大了。。。然后还是硬着头皮去摸索怎么转到国内。</p>
 <p>就在这时，我突然看到，<strong>新注册的域名必须经过60天后才能转到国内</strong>。好了，这下省下来这些功夫了，根本转不回来。</p>
 <p>域名备案宣告破产。</p>
 <p>使用国内服务器搭建宣告破产。</p>
-<h2 id="hexo-netflix-github-pages">hexo + Netflix + GitHub pages</h2>
-<p>既然无法使用国内的服务器搭建，但是我又舍不得放弃我的域名，那就看看能不能找到其他的地方去部署网站吧。gitee似乎是一个比较不错的选择，同样有pages功能，跟GitHub长得也比较类似。那就试试gitee吧。</p>
-<p>然后发现gitee要实名验证。实名验证不只是输入身份证号码，还需要上传身份证正反面证件，上传手持身份证照片...心理膈应，直接放弃gitee了。btw，gitee的public仓库还要审核...</p>
+<h2 id="hexo-Netflix-GitHub-pages"><a href="#hexo-Netflix-GitHub-pages" class="headerlink" title="hexo + Netflix + GitHub pages"></a>hexo + Netflix + GitHub pages</h2><p>既然无法使用国内的服务器搭建，但是我又舍不得放弃我的域名，那就看看能不能找到其他的地方去部署网站吧。gitee似乎是一个比较不错的选择，同样有pages功能，跟GitHub长得也比较类似。那就试试gitee吧。</p>
+<p>然后发现gitee要实名验证。实名验证不只是输入身份证号码，还需要上传身份证正反面证件，上传手持身份证照片…心理膈应，直接放弃gitee了。btw，gitee的public仓库还要审核…</p>
 <p>兜兜转转回到GitHub。就在我觉得山穷水尽的时候，忽然发现了netflix。</p>
 <blockquote>
-<p>什么是Netlify？ Netlify是部署Github
-pages站点的绝佳选择。Netlify是一个统一平台，可自动执行代码，以创建高性能，易于维护的站点和Web应用程序。它们提供持续部署，智能的全局CDN，完整的DNS（包括自定义域），自动HTTPS，资产加速等等。</p>
+<p>什么是Netlify？<br>Netlify是部署Github pages站点的绝佳选择。Netlify是一个统一平台，可自动执行代码，以创建高性能，易于维护的站点和Web应用程序。它们提供持续部署，智能的全局CDN，完整的DNS（包括自定义域），自动HTTPS，资产加速等等。</p>
 </blockquote>
 <p>而且netlify<strong>没有被墙，没有被墙，没有被墙。</strong>在国内可以以正常的速度访问！！</p>
-<p>迅速注册netlify，然后关联GitHub，将原GitHub
-pages文件部署到netlify上。然后netlify就会给出一个特定的url，通过这个url就可以访问netlify上你的GitHub项目部署的网站了。同时，你在GitHub仓库上的commit会实时更新到netlify上，然后自动部署，非常地省心。</p>
+<p>迅速注册netlify，然后关联GitHub，将原GitHub pages文件部署到netlify上。然后netlify就会给出一个特定的url，通过这个url就可以访问netlify上你的GitHub项目部署的网站了。同时，你在GitHub仓库上的commit会实时更新到netlify上，然后自动部署，非常地省心。</p>
 <p>最后，只需要在我的域名管理器上修改dns服务器，改为netlify提供的四个地址，然后将cname指向netlify给出的url，保存，等待生效，完成！</p>
 <p>最终效果=GitHub pages效果。</p>
-<p>一个完整的发布流程和GitHub
-pages一样，本地生成，push到GitHub，然后稍等片刻，就可以看到修改后的版本。可以直接通过自定义的url进行访问网站，并且速度有了质的提升。至此，博客搭建折腾之路基本结束，差不多可以专心去写内容了。</p>
-<h2 id="总结">总结</h2>
-<p>使用hexo搭建博客非常地方便，重点是在于将其正确地部署，并让其他人能够方便地访问你的博客。踩坑总结：
-- 使用GitHub pages部署很方便，但是速度不稳定，容易崩。 -
-国内服务器搭建的网站如果想使用自定义域名而不是公网IP访问，就必须要备案。
-- 备案要求你的域名是国内注册商。 - 新域名必须过60天后才能转回国内。 -
-gitee需要比较严格的实名验证，不太让人放心。</p>
-<p>搭建流程总结： - 使用hexo配置好环境 -
-创建好GitHub项目，并正确配置好pages setting - 使用netlify关联GitHub
-repository - 将自己的域名解析到netlify上</p>
-<h1 id="后记">后记</h1>
-<p>嗯...折腾确实是非常耗费时间，但是也在这个过程中学会了很多相关的知识点，也算是比较有收获。这篇博客算是对自己建站之路的大致总结，并不是新手友好向（但是可以踩雷参考）。实际的搭建过程中会有非常多的细节需要注意。更详细的搭建教程我会贴在下面，想尝试的可以参考参考。只有亲自去实践才会知道问题是会层出不穷的。在不断折腾的过程中，也能学会很多知识，掌握遇到问题解决问题的能力。</p>
+<p>一个完整的发布流程和GitHub pages一样，本地生成，push到GitHub，然后稍等片刻，就可以看到修改后的版本。可以直接通过自定义的url进行访问网站，并且速度有了质的提升。至此，博客搭建折腾之路基本结束，差不多可以专心去写内容了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用hexo搭建博客非常地方便，重点是在于将其正确地部署，并让其他人能够方便地访问你的博客。踩坑总结：</p>
+<ul>
+<li>使用GitHub pages部署很方便，但是速度不稳定，容易崩。</li>
+<li>国内服务器搭建的网站如果想使用自定义域名而不是公网IP访问，就必须要备案。<ul>
+<li>备案要求你的域名是国内注册商。</li>
+<li>新域名必须过60天后才能转回国内。</li>
+</ul>
+</li>
+<li>gitee需要比较严格的实名验证，不太让人放心。</li>
+</ul>
+<p>搭建流程总结：</p>
+<ul>
+<li>使用hexo配置好环境</li>
+<li>创建好GitHub项目，并正确配置好pages setting</li>
+<li>使用netlify关联GitHub repository</li>
+<li>将自己的域名解析到netlify上</li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>嗯…折腾确实是非常耗费时间，但是也在这个过程中学会了很多相关的知识点，也算是比较有收获。这篇博客算是对自己建站之路的大致总结，并不是新手友好向（但是可以踩雷参考）。实际的搭建过程中会有非常多的细节需要注意。更详细的搭建教程我会贴在下面，想尝试的可以参考参考。只有亲自去实践才会知道问题是会层出不穷的。在不断折腾的过程中，也能学会很多知识，掌握遇到问题解决问题的能力。</p>
 <p>因为最近实在太热，不想出门，躲宿舍吹空调很快乐，所以植物的先鸽了（</p>
 <p>会继续更新一些技术学习笔记，或者是某些读书笔记等。权当写个乐呵。</p>
 <p><strong>搭建博客教程（新手向）</strong></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用hexo+GitHub
-pages免费搭建个人博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用hexo+GitHub pages免费搭建个人博客</a></p>
 
               
             </div>
