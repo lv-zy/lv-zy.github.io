@@ -236,37 +236,30 @@
             
             <div class="markdown-body">
               
-              <h1 id="常用容器的一些使用细节">常用容器的一些使用细节</h1>
-<h2 id="pair">pair</h2>
-<blockquote>
+              <h1 id="常用容器的一些使用细节"><a href="#常用容器的一些使用细节" class="headerlink" title="常用容器的一些使用细节"></a>常用容器的一些使用细节</h1><h2 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h2><blockquote>
 <p>pair是将两个类型的变量关联在一起的容器,可以用在函数返回值的传递,在map中也有大量的应用</p>
 </blockquote>
 <p><strong>pair的构造方法</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//通过分别赋值</span><br>    std::pair&lt;<span class="hljs-type">int</span>,std::string&gt; p;<br>    p.first = <span class="hljs-number">1</span>;<br>    p.second = <span class="hljs-string">&quot;pair&quot;</span>;<br><br><span class="hljs-comment">//通过构造函数</span><br>    <span class="hljs-function">std::pair&lt;<span class="hljs-type">int</span>,std::string&gt; <span class="hljs-title">p</span><span class="hljs-params">(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;pair&quot;</span>)</span></span>;<br><br><span class="hljs-comment">//通过make_pair函数</span><br>    std::pair&lt;<span class="hljs-type">int</span>,std::string&gt; p = std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;pair&quot;</span>);<br>    <span class="hljs-keyword">auto</span> p = std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;pair&quot;</span>);<span class="hljs-comment">//使用auto来简化流程</span><br><br></code></pre></td></tr></table></figure>
 <p>pair还可以用来比较大小，前提是对pair里面的数据类型重载了比较运算符。注意：需要相同类型的pair才能够比较大小。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function">std::pair&lt;<span class="hljs-type">int</span>,std::string&gt; <span class="hljs-title">p1</span><span class="hljs-params">(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;HH&quot;</span>)</span></span>;<br><span class="hljs-function">std::pair&lt;<span class="hljs-type">int</span>,std::string&gt; <span class="hljs-title">p2</span><span class="hljs-params">(<span class="hljs-number">2</span>,<span class="hljs-string">&quot;FF&quot;</span>)</span></span>;<br><span class="hljs-type">bool</span> result = p1&lt;p2;<span class="hljs-comment">//result 为true</span><br></code></pre></td></tr></table></figure>
-<h2 id="tuple">tuple</h2>
-<blockquote>
+<h2 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h2><blockquote>
 <p>tuple和pair类似,但其可以拥有若干个成员,可以在函数拥有多个返回值的时候使用</p>
 </blockquote>
 <p>tuple和python的tuple有些区别.python的tuple值无法更改,而c++的tuple是可以更改的.</p>
 <p><strong>使用样例</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//创建</span><br><span class="hljs-keyword">auto</span> i = std::<span class="hljs-built_in">make_tuple</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1.2</span>,<span class="hljs-string">&quot;tuple&quot;</span>,<span class="hljs-literal">false</span>);<br><br><span class="hljs-comment">//使用tuple来对多变量进行方便赋值,我们有std::tie函数,返回左值引用的元组</span><br><span class="hljs-type">int</span> a;<br><span class="hljs-type">double</span> b;<br>std::string c;<br><span class="hljs-type">bool</span> d;<br>std::<span class="hljs-built_in">tie</span>(a,b,c,d) = i;<span class="hljs-comment">//这四个变量的值都会相应地改变</span><br><br><span class="hljs-comment">// 获取单个数据,使用std::get函数</span><br><span class="hljs-comment">//get函数可以返回一个引用,对tuple数据进行更改</span><br><span class="hljs-type">int</span> f = std::<span class="hljs-built_in">get</span>&lt;<span class="hljs-number">0</span>&gt;(i);<span class="hljs-comment">//f=1</span><br>std::<span class="hljs-built_in">get</span>&lt;<span class="hljs-number">0</span>&gt;(i) = <span class="hljs-number">2</span>;<span class="hljs-comment">//更改tuple中的值,注意下标在编译时要确定,即不能是变量,否则会报错</span><br><br><br></code></pre></td></tr></table></figure>
-<h2 id="vector">vector</h2>
-<blockquote>
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><blockquote>
 <p>vector是一个非常基本的容器,类似于数组,但更加安全有效.</p>
 </blockquote>
 <p>vector可以像数组一样直接用下标访问,且速度较快.</p>
 <p><strong>基本方法</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++">std::vector&lt;<span class="hljs-type">int</span>&gt; temp;<br>temp.<span class="hljs-built_in">size</span>();<span class="hljs-comment">//返回数组长度</span><br>temp.<span class="hljs-built_in">clear</span>();<span class="hljs-comment">//清空</span><br><br><br><span class="hljs-comment">//修改操作</span><br>temp.<span class="hljs-built_in">pop_back</span>();<br>temp.<span class="hljs-built_in">push_back</span>(num);<span class="hljs-comment">//在末尾进行删增操作,高速</span><br><br>temp.<span class="hljs-built_in">insert</span>(x.<span class="hljs-built_in">begin</span>(),<span class="hljs-number">5</span>);<br>temp.<span class="hljs-built_in">erase</span>(x.<span class="hljs-built_in">begin</span>());<span class="hljs-comment">//使用迭代器来删改,低速</span><br><br><br></code></pre></td></tr></table></figure>
-<h3 id="vector-iterator">vector iterator</h3>
-<blockquote>
-<p>vector iterator
-提供了一个访问vector数据的一个抽象统一接口,使用方法类似于指针,是一种数据类型</p>
+<h3 id="vector-iterator"><a href="#vector-iterator" class="headerlink" title="vector iterator"></a>vector iterator</h3><blockquote>
+<p>vector iterator 提供了一个访问vector数据的一个抽象统一接口,使用方法类似于指针,是一种数据类型</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++">std::vector&lt;<span class="hljs-type">int</span>&gt; temp;<br><span class="hljs-keyword">auto</span> i = temp.<span class="hljs-built_in">begin</span>();<span class="hljs-comment">//指向开头的迭代器</span><br><span class="hljs-keyword">auto</span> j = temp.<span class="hljs-built_in">end</span>();<span class="hljs-comment">//指向末尾后一个的迭代器,即使用begin ,end要注意是左闭右开区间</span><br><br><span class="hljs-comment">//iterator重载了运算符,可以像数一样运算操作</span><br><span class="hljs-keyword">auto</span> iter = temp.<span class="hljs-built_in">begin</span>();<br>iter++;<br>iter +=<span class="hljs-number">1</span>;<br><br><span class="hljs-comment">//类似指针的使用</span><br>*iter = <span class="hljs-number">1</span>;<span class="hljs-comment">//返回左值引用</span><br></code></pre></td></tr></table></figure>
-<h4 id="vector迭代器中需要注意的地方">vector迭代器中需要注意的地方</h4>
-<p>迭代器有时候会<strong>失效</strong>,即不再指向原本应该指向的元素.</p>
+<h4 id="vector迭代器中需要注意的地方"><a href="#vector迭代器中需要注意的地方" class="headerlink" title="vector迭代器中需要注意的地方"></a>vector迭代器中需要注意的地方</h4><p>迭代器有时候会<strong>失效</strong>,即不再指向原本应该指向的元素.</p>
 <p>比如删除了一个元素后,原本指向该元素的迭代器就会指向后一个元素.</p>
 <p>会导致迭代器失效的一些操作:</p>
 <ul>
@@ -274,37 +267,32 @@
 <li>增加vector的长度</li>
 </ul>
 <p>原因:当vector达到capacity后,会自动扩容,重新申请一片capacity*2的空间,并将数据转移到新的空间中.但是原来的迭代器仍然指向旧的空间,因此迭代器失效.</p>
-<p>为了防止迭代器失效,可以查阅 iterator
-validity,或者遵循绝对安全的准则:</p>
+<p>为了防止迭代器失效,可以查阅 iterator validity,或者遵循绝对安全的准则:</p>
 <blockquote>
 <p>修改容器后,不要再使用原来的迭代器</p>
 </blockquote>
-<h2 id="list">list</h2>
-<blockquote>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><blockquote>
 <p>list是使用双向链表实现的一个容器</p>
 </blockquote>
 <p>特点:</p>
 <ul>
 <li>不支持下标随机访问</li>
-<li>支持在任意位置<strong>高速</strong>插入</li>
+<li>支持在任意位置<strong>高速</strong>插入\删除</li>
 <li>主要依赖于迭代器来访问数据</li>
 <li>进行操作和删改不会对除了被操作对象外的迭代器失效</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++">std::list&lt;<span class="hljs-type">int</span>&gt; l;<br>l.<span class="hljs-built_in">push_front</span>(<span class="hljs-number">2</span>);<br>l.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">4</span>);<br><br><span class="hljs-comment">//查询</span><br>std::list&lt;<span class="hljs-type">int</span>&gt;::iterator iter = l.<span class="hljs-built_in">find</span>(iterator begin,iterator end,value);<br>l.<span class="hljs-built_in">insert</span>(iter);<br><br><br></code></pre></td></tr></table></figure>
-<h2 id="map">map</h2>
-<blockquote>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><blockquote>
 <p>map是数据的映射。将一个数据项映射到另一个数据项中。map中每个元素类型是pair。</p>
 </blockquote>
 <p><strong>map的使用</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c++">std::map&lt;std::string,<span class="hljs-type">int</span>&gt; m;<span class="hljs-comment">//将string映射到int中</span><br><br><span class="hljs-comment">//创建元素</span><br>m[<span class="hljs-string">&quot;闰年天数&quot;</span>] = <span class="hljs-number">366</span>; <span class="hljs-comment">//如果map中没有对应的key,则会自动生成一个新的pair,否则修改原key对应的value</span><br>m.<span class="hljs-built_in">insert</span>(std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;平年天数&quot;</span>,<span class="hljs-number">365</span>));<span class="hljs-comment">//通过insert来创建</span><br><br><span class="hljs-comment">//使用元素</span><br>std::map&lt;std::string,<span class="hljs-type">int</span>&gt;::iterator iter = m.<span class="hljs-built_in">find</span>(<span class="hljs-string">&quot;平年天数&quot;</span>);<span class="hljs-comment">//查询key,返回迭代器</span><br>m.<span class="hljs-built_in">count</span>(<span class="hljs-string">&quot;key&quot;</span>);<span class="hljs-comment">//查询key出现的次数,只能是1或者0</span><br>m.<span class="hljs-built_in">erase</span>(iter);<span class="hljs-comment">//删除迭代器对应的元素</span><br><br><br></code></pre></td></tr></table></figure>
-<h2 id="set">set</h2>
-<blockquote>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><blockquote>
 <p>set就是一个集合,和数学上集合的性质一样,不能有重复的元素</p>
 </blockquote>
 <p>set是一个无序集合,内部的排序是按照元素的大小进行排序,而不是插入元素的顺序</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++">std::set&lt;<span class="hljs-type">int</span>&gt; s;<br>s.<span class="hljs-built_in">insert</span>(value);<span class="hljs-comment">//如果value不存在,则创建对应的值;如果存在,那么操作无效果.</span><br><br>std::set&lt;<span class="hljs-type">int</span>&gt;::iterator iter = s.<span class="hljs-built_in">find</span>(value);<br>s.<span class="hljs-built_in">erase</span>(iter);<span class="hljs-comment">//寻找元素和删除元素的方法与map一致</span><br><br><br></code></pre></td></tr></table></figure>
-<h1 id="总结">总结</h1>
-<p>序列容器:vector,list</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>序列容器:vector,list</p>
 <p>关联容器:map,set</p>
 <p>序列容器可以按顺序访问, 元素有顺序</p>
 <p>关联容器可以按数值大小访问,元素无顺序</p>
@@ -347,6 +335,12 @@ validity,或者遵循绝对安全的准则:</p>
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/08/22/VPS-SSR/" title="自用VPS_SSR搭建">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">自用VPS_SSR搭建</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
